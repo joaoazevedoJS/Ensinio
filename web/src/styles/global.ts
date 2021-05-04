@@ -10,7 +10,14 @@ const GlobalStyled = createGlobalStyle`
   :root {
     --white: #FFFFFF;
 
+    --purple-400: #5F41D9;
+    --purple-800: #432E98;
+    --dark-purple-900: #130C25;
+
     --cyan-100: #99F3F5;
+    --cyan-500: #00E1E7;
+
+    --yellow-700: #E59E37;
   }
 
   body, button, textarea, input {

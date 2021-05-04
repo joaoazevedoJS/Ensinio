@@ -8,7 +8,9 @@ export const HeaderContainer = styled.header`
   -webkit-backdrop-filter: blur(30px);
 
   width: 100%;
-  padding: 24px;
+  padding: 1.5rem;
+  position: fixed;
+  z-index: 10;
 `;
 
 export const Content = styled(Layout)`
