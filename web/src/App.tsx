@@ -1,7 +1,17 @@
 import { FC } from 'react';
 
+import Home from './pages/Home';
+
+import GlobalStyled from './styles/global';
+
 const App: FC = () => {
-  return <h1>a</h1>;
+  return (
+    <>
+      <GlobalStyled />
+
+      <Home />
+    </>
+  );
 };
 
 export default App;
