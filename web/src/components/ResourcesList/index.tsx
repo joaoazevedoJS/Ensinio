@@ -25,7 +25,15 @@ const ResourcesList: FC = () => {
 
   return (
     <List>
-      <li>a</li>
+      {resources.map(resource => (
+        <li key={resource.id}>
+          <img src={StepsIcon} alt="" />
+
+          <strong>{resource.title.pt}</strong>
+
+          <p>{resource.description.pt}</p>
+        </li>
+      ))}
     </List>
   );
 };
