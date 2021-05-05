@@ -1,8 +1,4 @@
-interface IContentManyLanguage {
-  pt: string;
-  en: string;
-  es: string;
-}
+import { IContentManyLanguage } from '../../hooks/language';
 
 export interface IResource {
   id: number;

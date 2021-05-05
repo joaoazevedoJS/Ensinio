@@ -10,6 +10,8 @@ const GlobalStyled = createGlobalStyle`
   :root {
     --white: #FFFFFF;
 
+    --gray-400: #423D51;
+
     --purple-400: #5F41D9;
     --purple-800: #432E98;
     --dark-purple-900: #130C25;

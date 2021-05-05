@@ -1,20 +1,20 @@
 <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="13.5485" cy="13.5485" r="13.4865" fill="url(#paint0_linear)" fill-opacity="0.8"/>
+<circle cx="13.5485" cy="13.5485" r="13.4865" fill="url(#paint0_linear)"/>
 <g filter="url(#filter0_b)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M15.7914 6.79639L38.2782 6.79639C43.2459 6.79639 47.273 10.8235 47.273 15.7911V38.278C47.273 43.2456 43.2459 47.2727 38.2782 47.2727H15.7914C10.8237 47.2727 6.79663 43.2456 6.79663 38.278L6.79663 15.7911C6.79663 10.8235 10.8237 6.79639 15.7914 6.79639Z" fill="url(#paint1_linear)" fill-opacity="0.8"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M15.7914 6.79639L38.2782 6.79639C43.2459 6.79639 47.273 10.8235 47.273 15.7911V38.278C47.273 43.2456 43.2459 47.2727 38.2782 47.2727H15.7914C10.8237 47.2727 6.79663 43.2456 6.79663 38.278L6.79663 15.7911C6.79663 10.8235 10.8237 6.79639 15.7914 6.79639Z" stroke="url(#paint2_radial)" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.7914 6.79639L38.2782 6.79639C43.2459 6.79639 47.273 10.8235 47.273 15.7911V38.278C47.273 43.2456 43.2459 47.2727 38.2782 47.2727H15.7914C10.8237 47.2727 6.79663 43.2456 6.79663 38.278L6.79663 15.7911C6.79663 10.8235 10.8237 6.79639 15.7914 6.79639Z" fill="url(#paint1_linear)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.7914 6.79639L38.2782 6.79639C43.2459 6.79639 47.273 10.8235 47.273 15.7911V38.278C47.273 43.2456 43.2459 47.2727 38.2782 47.2727H15.7914C10.8237 47.2727 6.79663 43.2456 6.79663 38.278L6.79663 15.7911C6.79663 10.8235 10.8237 6.79639 15.7914 6.79639Z" stroke="url(#paint2_radial)" stroke-width="1.5" stroke-linecap="round"/>
 </g>
-<path d="M40.5272 24.7861V29.2835" stroke="white" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40.5272 24.7861V29.2835" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <g filter="url(#filter1_b)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M33.7811 20.2891V33.7812V20.2891Z" fill="url(#paint3_linear)" fill-opacity="0.8"/>
-<path d="M33.7811 20.2891V33.7812" stroke="url(#paint4_radial)" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.7811 20.2891V33.7812V20.2891Z" fill="url(#paint3_linear)"/>
+<path d="M33.7811 20.2891V33.7812" stroke="url(#paint4_radial)" stroke-width="1.5" stroke-linecap="round"/>
 </g>
-<path d="M13.5428 29.2835V24.7861" stroke="white" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.5428 29.2835V24.7861" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <g filter="url(#filter2_b)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M20.2889 33.7812V20.2891V33.7812Z" fill="url(#paint5_linear)" fill-opacity="0.8"/>
-<path d="M20.2889 33.7812V20.2891" stroke="url(#paint6_radial)" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.2889 33.7812V20.2891V33.7812Z" fill="url(#paint5_linear)"/>
+<path d="M20.2889 33.7812V20.2891" stroke="url(#paint6_radial)" stroke-width="1.5" stroke-linecap="round"/>
 </g>
-<path d="M27.035 15.7915V38.2784" stroke="white" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.035 15.7915V38.2784" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <defs>
 <filter id="filter0_b" x="-2.95337" y="-2.95361" width="59.9763" height="59.9763" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

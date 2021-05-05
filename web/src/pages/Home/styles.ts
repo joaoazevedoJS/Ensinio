@@ -4,14 +4,16 @@ import HeroImg from '../../assets/images/hero.png';
 
 export const MainContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 60rem;
   overflow: hidden;
 
   background: linear-gradient(285.95deg, #41b5d9 2.25%, #5f41d9 100.27%);
 `;
 
 export const MainContent = styled.main`
-  min-height: calc(100vh);
+  height: 100vh;
+  max-height: 60rem;
 
   display: grid;
   flex-direction: column;
@@ -122,6 +124,104 @@ export const MainButton = styled.div`
         transform: translate(10%, 0%);
       }
     }
+  }
+`;
+
+export const BackgroundImg = styled.div`
+  img {
+    position: absolute;
+    z-index: 1;
+    user-select: none;
+    display: none;
+  }
+
+  img.playlist-03 {
+    display: block;
+
+    top: 1.687rem;
+    right: 0.075rem;
+
+    width: 5.125rem;
+    transform: rotate(15deg);
+  }
+
+  img.certified {
+    display: block;
+    bottom: 3rem;
+    left: -3rem;
+
+    transform: rotate(-21.05deg);
+  }
+
+  @media (min-width: 600px) {
+    img {
+      display: block;
+    }
+
+    img.playlist-01 {
+      top: 2.687rem;
+      left: -4.875rem;
+
+      width: 5.125rem;
+      transform: rotate(15deg);
+    }
+
+    img.playlist-02 {
+      top: -0.687rem;
+      left: 12.875rem;
+
+      width: 3.375rem;
+    }
+
+    img.playlist-03 {
+      top: 2.687rem;
+      right: -4.875rem;
+    }
+
+    img.certified {
+      top: 4rem;
+      left: 40%;
+    }
+
+    img.transcription {
+      top: 1.4rem;
+      right: 16.875rem;
+
+      width: 3.375rem;
+      transform: rotate(20.07deg);
+    }
+  }
+`;
+
+export const HeroBackground = styled.div`
+  display: none;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  background: url(${HeroImg}) no-repeat center;
+  background-size: 100%;
+
+  @media (min-width: 600px) {
+    display: block;
+
+    width: 30.925rem;
+    height: 25.15rem;
+  }
+
+  @media (min-width: 735px) {
+    display: block;
+
+    width: 40.925rem;
+    height: 33.125rem;
+  }
+
+  @media (min-width: 1450px) {
+    display: block;
+
+    width: 44.925rem;
+    height: 36.125rem;
   }
 `;
 
@@ -243,101 +343,55 @@ export const Items = styled.section`
   }
 `;
 
-export const Footer = styled.footer``;
+export const Footer = styled.footer`
+  padding: 2.5rem 0;
 
-export const BackgroundImg = styled.div`
-  img {
-    position: absolute;
-    z-index: 1;
-    user-select: none;
-    display: none;
+  &,
+  div {
+    display: flex;
   }
 
-  img.playlist-03 {
-    display: block;
+  flex-direction: column;
 
-    top: 1.687rem;
-    right: 0.075rem;
-
-    width: 5.125rem;
-    transform: rotate(15deg);
+  div {
+    align-items: center;
   }
 
-  img.certified {
-    display: block;
-    bottom: 3rem;
-    left: -3rem;
-
-    transform: rotate(-21.05deg);
-  }
-
-  @media (min-width: 600px) {
+  div:first-child {
     img {
-      display: block;
+      margin-right: 1rem;
     }
 
-    img.playlist-01 {
-      top: 1.687rem;
-      left: -4.875rem;
-
-      width: 5.125rem;
-      transform: rotate(15deg);
-    }
-
-    img.playlist-02 {
-      top: -0.687rem;
-      left: 12.875rem;
-
-      width: 3.375rem;
-    }
-
-    img.playlist-03 {
-      right: -4.875rem;
-    }
-
-    img.certified {
-      top: 4rem;
-      left: 40%;
-    }
-
-    img.transcription {
-      top: 1.5rem;
-      right: 12.875rem;
-
-      width: 3.375rem;
-      transform: rotate(20.07deg);
+    span {
+      font-weight: 500;
+      color: var(--gray-400);
+      line-height: 145%;
     }
   }
-`;
 
-export const HeroBackground = styled.div`
-  display: none;
+  div:last-child {
+    align-self: flex-end;
 
-  position: absolute;
-  bottom: 0;
-  right: 0;
+    margin-top: 2rem;
 
-  background: url(${HeroImg}) no-repeat center;
-  background-size: 100%;
+    img {
+      margin-left: 1rem;
+    }
 
-  @media (min-width: 600px) {
-    display: block;
-
-    width: 30.925rem;
-    height: 25.15rem;
+    span {
+      font-weight: 600;
+      color: var(--purple-400);
+    }
   }
 
-  @media (min-width: 735px) {
-    display: block;
+  @media (min-width: 620px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    width: 40.925rem;
-    height: 33.125rem;
-  }
-
-  @media (min-width: 1450px) {
-    display: block;
-
-    width: 44.925rem;
-    height: 36.125rem;
+    div:last-child {
+      align-self: center;
+      margin-top: 0px;
+    }
   }
 `;

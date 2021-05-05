@@ -26,6 +26,12 @@ export const List = styled.ul`
       line-height: 125%;
       letter-spacing: 0.005em;
       margin-bottom: 1rem;
+      color: var(--dark-purple-900);
+    }
+
+    p {
+      line-height: 150%;
+      color: var(--gray-400);
     }
 
     @media (min-width: 700px) {

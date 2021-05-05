@@ -1,7 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 
+import { useLoading } from '../../hooks/loading';
+
 import StepsIcon from '../../assets/icons/steps.svg';
-import PlaylistIcon from '../../assets/icons/playlist.svg';
+import PlaylistIcon from '../../assets/icons/playlist-dark.svg';
 import FolderIcon from '../../assets/icons/folder.svg';
 
 import api from '../../services/api';
@@ -9,6 +11,7 @@ import api from '../../services/api';
 import { List } from './styles';
 
 import { IResource } from './resources';
+import { useLanguage } from '../../hooks/language';
 
 const ResourceIcon = {
   1: <img src={StepsIcon} alt="" />,
@@ -19,19 +22,32 @@ const ResourceIcon = {
 const ResourcesList: FC = () => {
   const [resources, setResources] = useState<IResource[]>([]);
 
+  const { languageSelected } = useLanguage();
+  const { openLoading, closeLoading } = useLoading();
+
   useEffect(() => {
-    api.get('/items').then(response => setResources(response.data));
-  }, []);
+    openLoading();
+
+    api
+      .get('/items')
+      .then(response => setResources(response.data))
+      .finally(() => closeLoading());
+  }, [closeLoading, openLoading]);
 
   return (
     <List>
-      {resources.map(resource => (
+      {resources.map((resource, index) => (
         <li key={resource.id}>
-          <img src={StepsIcon} alt="" />
+          {index === 0 && ResourceIcon[1]}
+          {index === 1 && ResourceIcon[2]}
+          {index === 2 && ResourceIcon[3]}
+          {index > 2 && ResourceIcon[1]}
 
-          <strong>{resource.title.pt}</strong>
+          <strong>
+            {resource.title[languageSelected] ?? resource.title.pt}
+          </strong>
 
-          <p>{resource.description.pt}</p>
+          <p>{resource.description[languageSelected] ?? resource.title.pt}</p>
         </li>
       ))}
     </List>

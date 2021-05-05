@@ -12,6 +12,8 @@ import PlayListIcon from '../../assets/icons/playlist.svg';
 import PlayListLightIcon from '../../assets/icons/playlist-light.svg';
 import Certified from '../../assets/icons/certified.svg';
 import Transcription from '../../assets/icons/transcription.svg';
+import Rocket from '../../assets/icons/rocket.svg';
+import ArrowRight from '../../assets/icons/arrow-right.svg';
 
 import {
   MainContainer,
@@ -91,7 +93,18 @@ const Home: FC = () => {
           <ResourcesList />
         </Items>
 
-        <Footer />
+        <Footer>
+          <div>
+            <img src={Rocket} alt="" />
+            <span>
+              Veja todos os outros recursos disponíveis para te ajudar
+            </span>
+          </div>
+
+          <div>
+            <span>Ver mais</span> <img src={ArrowRight} alt="" />
+          </div>
+        </Footer>
       </Container>
     </>
   );
