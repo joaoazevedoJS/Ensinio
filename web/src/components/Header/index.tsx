@@ -3,6 +3,8 @@ import { FiMenu } from 'react-icons/fi';
 
 import { useLanguage } from '../../hooks/language';
 
+import DropdownItem from '../Dropdown/Item';
+
 import LogoIcon from '../../assets/icons/logo.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';
 
@@ -11,7 +13,6 @@ import {
   ContentMobile,
   ContentDesktop,
   LoginGroup,
-  Lang,
 } from './styles';
 
 const Header: FC = () => {
@@ -35,7 +36,10 @@ const Header: FC = () => {
 
         <nav>
           <ul>
-            <li>Soluções</li>
+            <li>
+              <DropdownItem title="Soluções" />
+            </li>
+
             <li>Preços</li>
             <li>Academy</li>
             <li>Blog</li>
@@ -51,7 +55,7 @@ const Header: FC = () => {
 
             <button type="button">Começar agora</button>
 
-            <Lang>{languageSelected}</Lang>
+            <DropdownItem title={languageSelected} />
           </article>
         </nav>
       </ContentDesktop>

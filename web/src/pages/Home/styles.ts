@@ -4,6 +4,7 @@ import HeroImg from '../../assets/images/hero.png';
 
 export const MainContainer = styled.div`
   width: 100%;
+  min-height: 30rem;
   height: 100vh;
   max-height: 60rem;
   overflow: hidden;
@@ -344,7 +345,10 @@ export const Items = styled.section`
 `;
 
 export const Footer = styled.footer`
+  border-top: 1px solid var(--gray-50);
+
   padding: 2.5rem 0;
+  margin-bottom: 2rem;
 
   &,
   div {

@@ -79,7 +79,7 @@ export const ContentDesktop = styled(Layout)`
     article {
       margin-left: 2.5rem;
 
-      button {
+      > button {
         font-size: 0.937rem;
         font-weight: 600;
         color: var(--white);
@@ -91,6 +91,10 @@ export const ContentDesktop = styled(Layout)`
         background: transparent;
 
         margin: 0 2rem;
+      }
+
+      div:last-child {
+        text-transform: uppercase;
       }
     }
   }
@@ -115,8 +119,4 @@ export const LoginGroup = styled.div`
     font-weight: 600;
     line-height: 105%;
   }
-`;
-
-export const Lang = styled.div`
-  text-transform: uppercase;
 `;
