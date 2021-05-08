@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import { FiMenu } from 'react-icons/fi';
 
-import { useLanguage } from '../../hooks/language';
+import { useLanguage } from '../../hooks/useLanguage';
 
-import DropdownItem from '../Dropdown/Item';
+import Dropdown from '../Dropdown';
+import MainSolutions from '../Dropdown/Content/MainSolutions';
+import Lang from '../Dropdown/Content/Lang';
 
 import LogoIcon from '../../assets/icons/logo.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';
@@ -12,6 +14,7 @@ import {
   HeaderContainer,
   ContentMobile,
   ContentDesktop,
+  NavigationList,
   LoginGroup,
 } from './styles';
 
@@ -35,16 +38,16 @@ const Header: FC = () => {
         <img src={LogoIcon} alt="Ensinio" />
 
         <nav>
-          <ul>
+          <NavigationList>
             <li>
-              <DropdownItem title="Soluções" />
+              <Dropdown title="Soluções" content={MainSolutions} />
             </li>
 
             <li>Preços</li>
             <li>Academy</li>
             <li>Blog</li>
             <li>Contato</li>
-          </ul>
+          </NavigationList>
 
           <article>
             <LoginGroup>
@@ -55,7 +58,7 @@ const Header: FC = () => {
 
             <button type="button">Começar agora</button>
 
-            <DropdownItem title={languageSelected} />
+            <Dropdown title={languageSelected} content={Lang} uppercase />
           </article>
         </nav>
       </ContentDesktop>

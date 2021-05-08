@@ -1,20 +1,14 @@
 import { FC } from 'react';
 
-import { Container } from './styles';
+import { DropdownContainer, DropdownArrow } from './styles';
 
-interface DropdownItemProps {
-  title: string;
-}
-
-const DropdownItem: FC<DropdownItemProps> = ({ title }) => {
+const DropdownItem: FC = ({ children }) => {
   return (
-    <Container>
-      {title}
+    <DropdownContainer>
+      <DropdownArrow />
 
-      <div>
-        <span />
-      </div>
-    </Container>
+      {children}
+    </DropdownContainer>
   );
 };
 

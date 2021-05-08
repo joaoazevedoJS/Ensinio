@@ -56,24 +56,9 @@ export const ContentDesktop = styled(Layout)`
 
   nav {
     &,
-    ul,
     article {
       display: flex;
       align-items: center;
-    }
-
-    ul {
-      padding-right: 2.5rem;
-
-      border-right: 1px solid var(--cyan-100);
-
-      li {
-        list-style: none;
-
-        & + li {
-          margin-left: 2rem;
-        }
-      }
     }
 
     article {
@@ -92,15 +77,28 @@ export const ContentDesktop = styled(Layout)`
 
         margin: 0 2rem;
       }
-
-      div:last-child {
-        text-transform: uppercase;
-      }
     }
   }
 
   @media (min-width: 980px) {
     display: flex;
+  }
+`;
+
+export const NavigationList = styled.ul`
+  display: flex;
+  align-items: center;
+
+  padding-right: 2.5rem;
+
+  border-right: 1px solid var(--cyan-100);
+
+  > li {
+    list-style: none;
+
+    & + li {
+      margin-left: 2rem;
+    }
   }
 `;
 

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Dropdown from './components/Dropdown';
 
 import Provider from './hooks';
 

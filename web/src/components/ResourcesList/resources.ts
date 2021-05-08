@@ -1,4 +1,4 @@
-import { IContentManyLanguage } from '../../hooks/language';
+import { IContentManyLanguage } from '../../hooks/useLanguage/types';
 
 export interface IResource {
   id: number;

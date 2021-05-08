@@ -1,13 +1,8 @@
 import { createContext, FC, useCallback, useContext, useState } from 'react';
 
-import Loading from '../components/Loading';
+import Loading from '../../components/Loading';
 
-export interface ILoadingContext {
-  isLoading: boolean;
-  openLoading(): void;
-  closeLoading(): void;
-  setLoading(state: boolean): void;
-}
+import { ILoadingContext } from './types';
 
 const LoadingContext = createContext<ILoadingContext>({} as ILoadingContext);
 

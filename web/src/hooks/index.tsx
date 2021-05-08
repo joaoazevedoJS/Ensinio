@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { LanguageProvider } from './language';
-import { LoadingProvider } from './loading';
+import { LanguageProvider } from './useLanguage';
+import { LoadingProvider } from './useLoading';
 
 const Provider: FC = ({ children }) => (
   <LanguageProvider>

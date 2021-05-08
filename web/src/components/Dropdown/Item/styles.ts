@@ -2,47 +2,31 @@ import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
 
-export const Container = styled(motion.div)`
-  display: flex;
-  align-items: center;
+export const DropdownContainer = styled(motion.div)`
+  position: absolute;
+  z-index: 15;
 
-  div {
-    transform: rotate(-180deg);
-    margin-left: 0.5rem;
+  padding-top: 1rem;
+  margin-left: -1rem;
 
-    span {
-      display: block;
+  box-shadow: 0px 41.7776px 33.4221px rgba(66, 61, 81, 0.0503198);
+`;
 
-      overflow: hidden;
-      position: relative;
-      border-radius: 20%;
-      transform: translateY(40%) rotate(30deg) skewY(30deg) scaleX(0.866);
+export const DropdownArrow = styled.div`
+  position: relative;
 
-      &,
-      &:before,
-      &:after {
-        width: 0.625em;
-        height: 0.625em;
-      }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--white);
+    z-index: -1;
 
-      &:before,
-      &:after {
-        position: absolute;
-        background: var(--cyan-100);
-        content: '';
-      }
+    top: -0.406rem;
+    left: 1.5rem;
+    border-radius: 0.25rem 0 0 0;
 
-      &:before {
-        border-radius: 20% 50%;
-        transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
-          skewX(30deg) scaleY(0.866) translateX(-24%);
-      }
-
-      &:after {
-        border-radius: 0 0 53% 20%;
-        transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
-          skewX(-30deg) scaleY(0.866) translateX(24%);
-      }
-    }
+    transform: rotate(45deg);
   }
 `;

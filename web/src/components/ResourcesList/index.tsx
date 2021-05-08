@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 
-import { useLoading } from '../../hooks/loading';
+import { useLoading } from '../../hooks/useLoading';
+import { useLanguage } from '../../hooks/useLanguage';
 
 import StepsIcon from '../../assets/icons/steps.svg';
 import PlaylistIcon from '../../assets/icons/playlist-dark.svg';
@@ -11,7 +12,6 @@ import api from '../../services/api';
 import { List } from './styles';
 
 import { IResource } from './resources';
-import { useLanguage } from '../../hooks/language';
 
 const ResourceIcon = {
   1: <img src={StepsIcon} alt="" />,
