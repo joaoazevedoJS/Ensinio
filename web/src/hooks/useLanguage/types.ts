@@ -1,5 +1,3 @@
-import { ElementType } from 'react';
-
 export interface IContentManyLanguage {
   pt: string;
   en: string;
@@ -10,7 +8,7 @@ export type ILangsSelected = 'pt' | 'en' | 'es';
 
 export interface ILangWithIcon {
   icon: string;
-  lang: ILangsSelected;
+  short_name: ILangsSelected;
 }
 
 export interface ILanguageContext {

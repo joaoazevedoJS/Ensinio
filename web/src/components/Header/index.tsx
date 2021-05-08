@@ -1,5 +1,4 @@
-import { FC } from 'react';
-import { FiMenu } from 'react-icons/fi';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { useLanguage } from '../../hooks/useLanguage';
 
@@ -21,10 +20,26 @@ import {
 const Header: FC = () => {
   const { languageSelected } = useLanguage();
 
+  const [isChangeColor, setIsChangeColor] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    // for Safari
+    const { body } = document;
+
+    // for Chrome, Firefox, IE and Opera
+    const element = document.documentElement;
+
+    setIsChangeColor(element.scrollTop > 300 || body.scrollTop > 300);
+  }, []);
+
+  useEffect(() => {
+    document.body.onscroll = handleScroll;
+  }, [handleScroll]);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer isChangeColor={isChangeColor}>
       <ContentMobile>
-        <FiMenu />
+        <Dropdown isMenu content={() => <p>menu</p>} />
 
         <img src={LogoIcon} alt="Ensinio" />
 

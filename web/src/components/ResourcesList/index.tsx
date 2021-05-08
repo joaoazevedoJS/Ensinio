@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { useLoading } from '../../hooks/useLoading';
 import { useLanguage } from '../../hooks/useLanguage';
@@ -31,6 +32,11 @@ const ResourcesList: FC = () => {
     api
       .get('/items')
       .then(response => setResources(response.data))
+      .catch(() =>
+        toast.error(
+          'Aconteceu um erro interno, não foi possível mostrar alguns recursos da página!',
+        ),
+      )
       .finally(() => closeLoading());
   }, [closeLoading, openLoading]);
 

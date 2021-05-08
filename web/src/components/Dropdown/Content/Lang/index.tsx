@@ -1,32 +1,48 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { FiCheck } from 'react-icons/fi';
 
-import { useLanguage } from '../../../../hooks/useLanguage';
+import { useLanguage, ILangsSelected } from '../../../../hooks/useLanguage';
 
 import { Content, ListItem } from './styles';
 
 const Lang: FC = () => {
-  const { languagesWithIcon, languageSelected } = useLanguage();
+  const {
+    languagesWithIcon,
+    languageSelected,
+    changeLanguageTo,
+  } = useLanguage();
+
+  const handleChangeLanguageTo = useCallback(
+    (lang: ILangsSelected) => {
+      changeLanguageTo(lang);
+    },
+    [changeLanguageTo],
+  );
 
   return (
     <Content>
       <ul>
         {languagesWithIcon.map(lang => (
           <ListItem
-            key={lang.lang}
+            key={lang.short_name}
             isSelected={
-              lang.lang.toLocaleLowerCase() ===
+              lang.short_name.toLocaleLowerCase() ===
               languageSelected.toLocaleLowerCase()
             }
           >
-            <div>
-              <img src={lang.icon} alt="lang" />
+            <button
+              type="button"
+              onClick={() => handleChangeLanguageTo(lang.short_name)}
+            >
+              <div>
+                <img src={lang.icon} alt="lang" />
 
-              <span>{lang.lang}</span>
-            </div>
+                <span>{lang.short_name}</span>
+              </div>
 
-            {lang.lang.toLocaleLowerCase() ===
-              languageSelected.toLocaleLowerCase() && <FiCheck />}
+              {lang.short_name.toLocaleLowerCase() ===
+                languageSelected.toLocaleLowerCase() && <FiCheck />}
+            </button>
           </ListItem>
         ))}
       </ul>

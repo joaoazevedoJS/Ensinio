@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Dropdown from './components/Dropdown';
+import { ToastContainer } from 'react-toastify';
 
 import Provider from './hooks';
 
@@ -11,6 +11,8 @@ const App: FC = () => {
   return (
     <>
       <GlobalStyled />
+
+      <ToastContainer autoClose={3000} />
 
       <Provider>
         <Home />

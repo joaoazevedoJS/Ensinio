@@ -1,34 +1,73 @@
-import { ElementType, FC } from 'react';
+import { ElementType, FC, useCallback, useState } from 'react';
+import { FiMenu } from 'react-icons/fi';
+
+import { motion } from 'framer-motion';
 
 import DropdownItem from './Item';
 
 import { Container } from './styles';
 
 interface DropdownProps {
-  title: string;
-  content: ElementType;
+  title?: string;
+  isMenu?: boolean;
   uppercase?: boolean;
+  content: ElementType;
 }
 
 const Dropdown: FC<DropdownProps> = ({
   title,
   content: Content,
+  isMenu,
   uppercase,
 }) => {
-  return (
-    <div>
-      <Container uppercase={uppercase}>
-        <span>{title}</span>
+  const [isActive, setIsActive] = useState(false);
 
-        <div>
-          <span />
-        </div>
+  const handleOpenDropdown = useCallback(() => {
+    setIsActive(true);
+  }, []);
+
+  const handleCloseDropdown = useCallback(() => {
+    setIsActive(false);
+  }, []);
+
+  const handleToogleDropdown = useCallback(() => {
+    setIsActive(!isActive);
+  }, [isActive]);
+
+  return (
+    <motion.div onHoverEnd={handleCloseDropdown} onBlur={handleCloseDropdown}>
+      <Container
+        uppercase={uppercase}
+        onHoverStart={handleOpenDropdown}
+        onFocus={handleOpenDropdown}
+        onClick={handleToogleDropdown}
+      >
+        {isMenu ? (
+          <FiMenu />
+        ) : (
+          <>
+            <span>{title}</span>
+
+            <motion.div
+              animate={{
+                rotateX: isActive ? 0 : -180,
+              }}
+              transition={{
+                rotateX: {
+                  duration: 0.4,
+                },
+              }}
+            >
+              <span />
+            </motion.div>
+          </>
+        )}
       </Container>
 
-      <DropdownItem>
+      <DropdownItem isActive={isActive} isMenu={isMenu}>
         <Content />
       </DropdownItem>
-    </div>
+    </motion.div>
   );
 };
 

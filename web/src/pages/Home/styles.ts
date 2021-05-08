@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { lighten, shade } from 'polished';
+
+import { motion } from 'framer-motion';
 
 import HeroImg from '../../assets/images/hero.png';
 
@@ -12,7 +15,7 @@ export const MainContainer = styled.div`
   background: linear-gradient(285.95deg, #41b5d9 2.25%, #5f41d9 100.27%);
 `;
 
-export const MainContent = styled.main`
+export const MainContent = styled(motion.main)`
   height: 100vh;
   max-height: 60rem;
 
@@ -97,6 +100,12 @@ export const MainButton = styled.div`
     border-radius: 5rem;
     font-weight: 600;
     margin-right: 1rem;
+
+    transition: background-color 0.4s;
+
+    &:hover {
+      background: ${shade(0.2, '#00E1E7')};
+    }
   }
 
   button:last-child {
@@ -106,6 +115,19 @@ export const MainButton = styled.div`
     background: transparent;
     font-weight: 600;
     color: var(--white);
+    transition: color 0.4s;
+
+    &:hover {
+      color: var(--gray-100);
+
+      div {
+        background: linear-gradient(
+          135deg,
+          #ffffff -314.58%,
+          rgba(255, 255, 255, 0.2) 95.83%
+        );
+      }
+    }
 
     div {
       margin-right: 0.5rem;
@@ -375,16 +397,28 @@ export const Footer = styled.footer`
 
   div:last-child {
     align-self: flex-end;
-
+    cursor: pointer;
     margin-top: 2rem;
+
+    &:hover {
+      img {
+        opacity: 0.7;
+      }
+
+      span {
+        color: ${lighten(0.3, '#5F41D9')};
+      }
+    }
 
     img {
       margin-left: 1rem;
+      transition: opacity 0.4s;
     }
 
     span {
       font-weight: 600;
       color: var(--purple-400);
+      transition: color 0.4s;
     }
   }
 

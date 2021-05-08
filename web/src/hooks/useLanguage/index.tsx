@@ -15,6 +15,8 @@ import SpainIcon from '../../assets/icons/country/spain.svg';
 
 import { ILanguageContext, ILangsSelected, ILangWithIcon } from './types';
 
+export * from './types';
+
 const LanguageContext = createContext<ILanguageContext>({} as ILanguageContext);
 
 const LanguageProvider: FC = ({ children }) => {
@@ -24,15 +26,15 @@ const LanguageProvider: FC = ({ children }) => {
     return [
       {
         icon: BrazilIcon,
-        lang: 'pt',
+        short_name: 'pt',
       },
       {
         icon: UsaIcon,
-        lang: 'en',
+        short_name: 'en',
       },
       {
         icon: SpainIcon,
-        lang: 'es',
+        short_name: 'es',
       },
     ];
   }, []);

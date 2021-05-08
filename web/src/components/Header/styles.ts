@@ -1,16 +1,32 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Layout } from '../Container/styles';
 
-export const HeaderContainer = styled.header`
-  background: rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+interface IHeaderContainerProps {
+  isChangeColor?: boolean;
+}
+
+export const HeaderContainer = styled.header<IHeaderContainerProps>`
+  ${({ isChangeColor }) =>
+    isChangeColor
+      ? css`
+          background: linear-gradient(
+            285.95deg,
+            #41b5d9 2.25%,
+            #5f41d9 100.27%
+          );
+        `
+      : css`
+          background: rgba(0, 0, 0, 0.03);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
+        `}
 
   width: 100%;
   padding: 1.5rem;
   position: fixed;
   z-index: 10;
+  transition: background-color 0.4s;
 
   @media (max-width: 290px) {
     padding: 1.5rem 0.5rem;
@@ -21,11 +37,6 @@ export const ContentMobile = styled(Layout)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  > svg {
-    font-size: 1.5rem;
-    color: var(--white);
-  }
 
   > img {
     height: 2rem;
@@ -44,11 +55,6 @@ export const ContentDesktop = styled(Layout)`
   color: var(--white);
   font-weight: 500;
   font-size: 0.937rem;
-
-  > svg {
-    font-size: 1.5rem;
-    color: var(--white);
-  }
 
   > img {
     height: 2rem;
@@ -76,6 +82,21 @@ export const ContentDesktop = styled(Layout)`
         background: transparent;
 
         margin: 0 2rem;
+
+        transition: background-color 0.4s, color 0.4s;
+
+        &:hover {
+          background: var(--white);
+          color: var(--dark-purple-900);
+        }
+      }
+
+      > div {
+        cursor: pointer;
+
+        &:hover {
+          color: var(--gray-100);
+        }
       }
     }
   }
@@ -95,9 +116,16 @@ export const NavigationList = styled.ul`
 
   > li {
     list-style: none;
+    cursor: pointer;
+
+    transition: color 0.4s;
 
     & + li {
       margin-left: 2rem;
+    }
+
+    &:hover {
+      color: var(--gray-100);
     }
   }
 `;
@@ -106,9 +134,22 @@ export const LoginGroup = styled.div`
   display: flex;
   align-items: center;
 
+  cursor: pointer;
+
+  &:hover {
+    img {
+      opacity: 0.9;
+    }
+
+    span {
+      color: var(--gray-100);
+    }
+  }
+
   img {
     width: 1.5rem;
     margin-right: 0.5rem;
+    transition: opacity 0.4s;
   }
 
   span {
@@ -116,5 +157,7 @@ export const LoginGroup = styled.div`
     color: var(--white);
     font-weight: 600;
     line-height: 105%;
+
+    transition: color 0.4s;
   }
 `;

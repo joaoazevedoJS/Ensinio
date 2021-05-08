@@ -7,6 +7,7 @@ interface ListItemProps {
 export const Content = styled.div`
   background: var(--white);
   border-radius: 0.5rem;
+  overflow: hidden;
 
   ul {
     list-style: none;
@@ -14,9 +15,6 @@ export const Content = styled.div`
 `;
 
 export const ListItem = styled.li<ListItemProps>`
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-
   &:hover {
     background: linear-gradient(
       90deg,
@@ -35,10 +33,19 @@ export const ListItem = styled.li<ListItemProps>`
       );
     `}
 
-  &,
-  div {
+  div,
+  button {
     display: flex;
     align-items: center;
+  }
+
+  button {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
   }
 
   div {

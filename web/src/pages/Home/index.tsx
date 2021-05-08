@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { RiFlashlightFill } from 'react-icons/ri';
 
+import { motion } from 'framer-motion';
 import Container from '../../components/Container';
 import Header from '../../components/Header';
 import ResourcesList from '../../components/ResourcesList';
@@ -14,6 +15,11 @@ import Certified from '../../assets/icons/certified.svg';
 import Transcription from '../../assets/icons/transcription.svg';
 import Rocket from '../../assets/icons/rocket.svg';
 import ArrowRight from '../../assets/icons/arrow-right.svg';
+
+import {
+  variantContainer,
+  variantItem,
+} from '../../styles/animations/variants';
 
 import {
   MainContainer,
@@ -33,7 +39,11 @@ const Home: FC = () => {
         <Header />
 
         <Container>
-          <MainContent>
+          <MainContent
+            variants={variantContainer}
+            initial="hidden"
+            animate="visible"
+          >
             <BackgroundImg>
               <img src={PlayListIcon} alt="" className="playlist-01" />
               <img src={PlayListLightIcon} alt="" className="playlist-02" />
@@ -49,25 +59,27 @@ const Home: FC = () => {
                 <span>plataforma all in one</span>
               </ServicesTitle>
 
-              <h1>
+              <motion.h1 variants={variantItem}>
                 Sua escola online <br /> poderosa e lucrativa
-              </h1>
+              </motion.h1>
 
-              <p>
+              <motion.p variants={variantItem}>
                 Tenha sua própria escola online 100% white label com rede
                 social, gamificação, clube de assinaturas, ecommerce e sistema
                 EAD completo.
-              </p>
+              </motion.p>
 
               <MainButton>
-                <button type="button">Começar agora</button>
+                <motion.button variants={variantItem} type="button">
+                  Começar agora
+                </motion.button>
 
-                <button type="button">
+                <motion.button variants={variantItem} type="button">
                   <div>
                     <img src={PlayIcon} alt="" />
                   </div>
                   Ver vídeo
-                </button>
+                </motion.button>
               </MainButton>
             </section>
 

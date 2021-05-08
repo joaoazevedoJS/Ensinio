@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { shade } from 'polished';
 
 import { motion } from 'framer-motion';
 
@@ -10,6 +11,15 @@ export const Container = styled(motion.div)<ContainerProps>`
   display: flex;
   align-items: center;
 
+  > svg {
+    font-size: 1.5rem;
+    color: var(--white);
+
+    &:hover {
+      color: ${shade(0.2, '#fff')};
+    }
+  }
+
   > span {
     ${({ uppercase }) =>
       uppercase &&
@@ -19,7 +29,6 @@ export const Container = styled(motion.div)<ContainerProps>`
   }
 
   div {
-    transform: rotate(-180deg);
     margin-left: 0.5rem;
 
     span {

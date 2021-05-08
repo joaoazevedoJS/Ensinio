@@ -4,16 +4,22 @@ import Loading from '../../components/Loading';
 
 import { ILoadingContext } from './types';
 
+export * from './types';
+
 const LoadingContext = createContext<ILoadingContext>({} as ILoadingContext);
 
 const LoadingProvider: FC = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const openLoading = useCallback(() => {
+    document.body.style.overflow = 'hidden';
+
     setIsLoading(true);
   }, []);
 
   const closeLoading = useCallback(() => {
+    document.body.style.overflow = 'auto';
+
     setIsLoading(false);
   }, []);
 
